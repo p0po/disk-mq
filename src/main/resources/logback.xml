@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<configuration scan="true" scanPeriod="30 seconds">
+    <property name="fileDir" value="/export/data/new"/>
+
+    <appender name="synFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>/export/data/test/new/write.data</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.MyFixedWindowRollingPolicy">
+            <FileNamePattern>/export/data/test/to-consume/%i</FileNamePattern>
+            <minIndex>1</minIndex>
+            <maxIndex>10</maxIndex>
+        </rollingPolicy>
+
+        <triggeringPolicy class="net.yongpo.MyTriggeringPolicy">
+        </triggeringPolicy>
+
+        <encoder>
+            <pattern>%msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="disk.writter" level="TRACE" additivity="false">
+        <appender-ref ref="synFile"/>
+    </logger>
+</configuration>
