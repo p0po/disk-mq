@@ -27,7 +27,7 @@
 ```
 
 ```java
-DiskMq diskMq = new DiskMqImpl("/export/data/", "test");
+DiskMq diskMq = new DiskMqImpl("/disk-data", "test");
 
 //添加消息
 diskMq.add(msg);
