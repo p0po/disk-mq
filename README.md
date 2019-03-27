@@ -5,9 +5,9 @@
 
 ```xml
   <appender name="dmqFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${data-dir}${cluster-name}/new/write.data</file>
+        <file>/disk-data/new/write.data</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.MyFixedWindowRollingPolicy">
-            <FileNamePattern>${data-dir}${cluster-name}/to-consume/%i</FileNamePattern>
+            <FileNamePattern>/disk-data/to-consume/%i</FileNamePattern>
             <minIndex>1</minIndex>
             <maxIndex>20</maxIndex>
         </rollingPolicy>
